@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="how_to_make_hexo_init" />
+    <meta name="hexo-theme-A4" content="v1.7.1" />
+    <link rel="alternate icon" type="image/webp" href="/img/IMG_20231022_224109.webp">
+    <title>tswinter98</title>
+
+    
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+    
+    
+<link rel="stylesheet" href="/css/ui.css">
+ 
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+    <body>
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">tswinter98</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+            
+                <li><a href="/collection/">收藏</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            how_to_make_hexo_init
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9C%A8ubuntu-20-04%E7%B3%BB%E7%BB%9F%E4%B8%8A%E6%90%AD%E5%BB%BAgithub-hexo-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2"><span class="post-toc-text">在ubuntu 20.04系统上搭建github+hexo 静态博客</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%8E%AF%E5%A2%83"><span class="post-toc-text">基本环境</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85git%E3%80%81nodejs%E3%80%81npm"><span class="post-toc-text">安装git、nodejs、npm</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AEgithub"><span class="post-toc-text">配置github</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hexo"><span class="post-toc-text">hexo</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%83%A8%E7%BD%B2hexo%E5%88%B0github-pages"><span class="post-toc-text">部署hexo到github pages</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="post-toc-text">参考文档</span></a></li></ol></li></ol>
+        
+        <h2 id="在ubuntu-20-04系统上搭建github-hexo-静态博客"><a href="#在ubuntu-20-04系统上搭建github-hexo-静态博客" class="headerlink" title="在ubuntu 20.04系统上搭建github+hexo 静态博客"></a>在ubuntu 20.04系统上搭建github+hexo 静态博客</h2><h3 id="基本环境"><a href="#基本环境" class="headerlink" title="基本环境"></a>基本环境</h3><p>ubuntu 20.04</p>
+<p>apt 2.0.9 (amd64)</p>
+<p>nodejs v18.18.2</p>
+<p>npm 9.8.1<br>    <a href="mailto:&#104;&#101;&#120;&#111;&#45;&#x63;&#108;&#x69;&#x40;&#x34;&#46;&#51;&#46;&#49;">&#104;&#101;&#120;&#111;&#45;&#x63;&#108;&#x69;&#x40;&#x34;&#46;&#51;&#46;&#49;</a></p>
+<p>git 2.25.1</p>
+<p>项目node_modules<br>    &gt; <a href="mailto:&#104;&#x65;&#x78;&#111;&#x2d;&#x73;&#x69;&#x74;&#x65;&#64;&#48;&#46;&#x30;&#x2e;&#48;">&#104;&#x65;&#x78;&#111;&#x2d;&#x73;&#x69;&#x74;&#x65;&#64;&#48;&#46;&#x30;&#x2e;&#48;</a> &#x2F;codes&#x2F;blog-gexo&#x2F;blog<br>├── <a href="mailto:&#104;&#101;&#120;&#111;&#x2d;&#x64;&#101;&#112;&#x6c;&#111;&#121;&#101;&#x72;&#45;&#x67;&#105;&#116;&#x40;&#52;&#x2e;&#48;&#x2e;&#x30;">&#104;&#101;&#120;&#111;&#x2d;&#x64;&#101;&#112;&#x6c;&#111;&#121;&#101;&#x72;&#45;&#x67;&#105;&#116;&#x40;&#52;&#x2e;&#48;&#x2e;&#x30;</a><br>├── <a href="mailto:&#104;&#101;&#120;&#111;&#45;&#103;&#101;&#x6e;&#x65;&#x72;&#x61;&#116;&#111;&#x72;&#45;&#x61;&#114;&#99;&#104;&#x69;&#118;&#101;&#x40;&#x32;&#x2e;&#48;&#46;&#48;">&#104;&#101;&#120;&#111;&#45;&#103;&#101;&#x6e;&#x65;&#x72;&#x61;&#116;&#111;&#x72;&#45;&#x61;&#114;&#99;&#104;&#x69;&#118;&#101;&#x40;&#x32;&#x2e;&#48;&#46;&#48;</a><br>├── <a href="mailto:&#x68;&#101;&#x78;&#111;&#x2d;&#103;&#x65;&#x6e;&#101;&#114;&#97;&#116;&#111;&#114;&#x2d;&#99;&#97;&#x74;&#x65;&#x67;&#x6f;&#114;&#121;&#x40;&#x32;&#46;&#48;&#46;&#48;">&#x68;&#101;&#x78;&#111;&#x2d;&#103;&#x65;&#x6e;&#101;&#114;&#97;&#116;&#111;&#114;&#x2d;&#99;&#97;&#x74;&#x65;&#x67;&#x6f;&#114;&#121;&#x40;&#x32;&#46;&#48;&#46;&#48;</a><br>├── <a href="mailto:&#104;&#x65;&#120;&#111;&#45;&#x67;&#101;&#110;&#x65;&#x72;&#x61;&#x74;&#111;&#114;&#x2d;&#x69;&#x6e;&#x64;&#101;&#120;&#x40;&#51;&#x2e;&#48;&#46;&#x30;">&#104;&#x65;&#120;&#111;&#45;&#x67;&#101;&#110;&#x65;&#x72;&#x61;&#x74;&#111;&#114;&#x2d;&#x69;&#x6e;&#x64;&#101;&#120;&#x40;&#51;&#x2e;&#48;&#46;&#x30;</a><br>├── <a href="mailto:&#x68;&#101;&#x78;&#111;&#45;&#x67;&#x65;&#x6e;&#101;&#114;&#x61;&#116;&#x6f;&#114;&#x2d;&#x74;&#97;&#103;&#x40;&#x32;&#x2e;&#x30;&#46;&#x30;">&#x68;&#101;&#x78;&#111;&#45;&#x67;&#x65;&#x6e;&#101;&#114;&#x61;&#116;&#x6f;&#114;&#x2d;&#x74;&#97;&#103;&#x40;&#x32;&#x2e;&#x30;&#46;&#x30;</a><br>├── <a href="mailto:&#104;&#101;&#x78;&#x6f;&#x2d;&#x72;&#x65;&#x6e;&#100;&#101;&#x72;&#x65;&#x72;&#x2d;&#101;&#x6a;&#115;&#x40;&#50;&#46;&#48;&#46;&#48;">&#104;&#101;&#x78;&#x6f;&#x2d;&#x72;&#x65;&#x6e;&#100;&#101;&#x72;&#x65;&#x72;&#x2d;&#101;&#x6a;&#115;&#x40;&#50;&#46;&#48;&#46;&#48;</a><br>├── <a href="mailto:&#104;&#x65;&#x78;&#x6f;&#x2d;&#114;&#101;&#110;&#100;&#x65;&#114;&#101;&#x72;&#45;&#x6d;&#x61;&#114;&#107;&#x65;&#100;&#x40;&#x36;&#46;&#49;&#x2e;&#x31;">&#104;&#x65;&#x78;&#x6f;&#x2d;&#114;&#101;&#110;&#100;&#x65;&#114;&#101;&#x72;&#45;&#x6d;&#x61;&#114;&#107;&#x65;&#100;&#x40;&#x36;&#46;&#49;&#x2e;&#x31;</a><br>├── <a href="mailto:&#x68;&#101;&#x78;&#x6f;&#x2d;&#114;&#101;&#110;&#x64;&#101;&#114;&#x65;&#114;&#45;&#115;&#116;&#x79;&#108;&#x75;&#x73;&#64;&#51;&#x2e;&#48;&#46;&#x30;">&#x68;&#101;&#x78;&#x6f;&#x2d;&#114;&#101;&#110;&#x64;&#101;&#114;&#x65;&#114;&#45;&#115;&#116;&#x79;&#108;&#x75;&#x73;&#64;&#51;&#x2e;&#48;&#46;&#x30;</a><br>├── <a href="mailto:&#104;&#x65;&#x78;&#x6f;&#45;&#x73;&#x65;&#x72;&#x76;&#101;&#114;&#x40;&#x33;&#x2e;&#48;&#46;&#x30;">&#104;&#x65;&#x78;&#x6f;&#45;&#x73;&#x65;&#x72;&#x76;&#101;&#114;&#x40;&#x33;&#x2e;&#48;&#46;&#x30;</a><br>├── <a href="mailto:&#x68;&#101;&#x78;&#x6f;&#45;&#116;&#x68;&#101;&#x6d;&#101;&#45;&#108;&#97;&#x6e;&#x64;&#115;&#x63;&#97;&#112;&#x65;&#x40;&#49;&#x2e;&#48;&#x2e;&#x30;">&#x68;&#101;&#x78;&#x6f;&#45;&#116;&#x68;&#101;&#x6d;&#101;&#45;&#108;&#97;&#x6e;&#x64;&#115;&#x63;&#97;&#112;&#x65;&#x40;&#49;&#x2e;&#48;&#x2e;&#x30;</a><br>└── <a href="mailto:&#104;&#x65;&#x78;&#111;&#x40;&#x36;&#x2e;&#51;&#46;&#48;">&#104;&#x65;&#x78;&#111;&#x40;&#x36;&#x2e;&#51;&#46;&#48;</a></p>
+<h3 id="安装git、nodejs、npm"><a href="#安装git、nodejs、npm" class="headerlink" title="安装git、nodejs、npm"></a>安装git、nodejs、npm</h3><p>git系统自带，一般都提前安装好了<br>安装nodejs， 这里可以使用apt包管理器来安装，但是版本(v10.19.0)较为老旧，后面安装hexo可能有依赖问题<br>这里我们使用<a target="_blank" rel="noopener" href="https://deb.nodesource.com/">Node.js DEB repository</a>来安装</p>
+<pre><code class="SHELL">sudo apt-get update &amp;&amp; sudo apt-get install -y ca-certificates curl gnupg
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=18
+echo &quot;deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main&quot; | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt-get update &amp;&amp; sudo apt-get install nodejs -y
+</code></pre>
+<p>以上命令会把nodejs环境和npm包管理器都会安装好<br>通过<code>node -v</code> 和 <code>npm -v</code> 可以查看当前安装的版本</p>
+<h3 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h3><p>设置git 用户信息<br><code>git config --global user.name  &quot;GitHub 用户名&quot; git config --global user.email &quot;GitHub 邮箱&quot;</code></p>
+<p>配置ssh公钥<br>    <code>ssh-keygen -t rsa -C &#39;your github email&#39;</code><br>一路回车，将生成的ssh公钥配置到github的setting界面，选择ssh and gpg kyes， 添加新的ssh-key<br>添加成功的验证方法： <code>ssh -T git@github.com</code></p>
+<p>设置github person access token<br>    在github的setting界面选择developer setting， 添加TOKEN. git提交时需要验证PAT</p>
+<p>新建github repository<br>    仓库名称： <code>github用户名.github.io</code></p>
+<h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><p>安装hexo-cli：<code>sudo npm install -g hexo-cli</code></p>
+<p>初始化hexo：<code>hexo init my-blog</code></p>
+<p><code>cd my-blog</code></p>
+<p>下载项目相关依赖<br><code>npm install</code> </p>
+<p>生成界面<br><code>hexo g</code></p>
+<p>启动预览<br><code>hexo s</code></p>
+<p>访问链接： <code>http://localhost:4000</code> or <code>http://ip_addr:4000</code></p>
+<p>hexo项目结构<br><code>tree -L 1</code></p>
+<p>├── _config.landscape.yml<br>├── _config.yml<br>├── db.json<br>├── LICENSE<br>├── node_modules<br>├── package.json<br>├── package-lock.json<br>├── public<br>├── README.md<br>├── scaffolds<br>├── source<br>└── themes</p>
+<p>_config.yml     网站配置信息<br>package.json    应用程序信息<br>scaffolds       模板文件夹<br>source          存放用户资源，即.md文档<br>themes          主题文件夹<br>public          网站文件</p>
+<h3 id="部署hexo到github-pages"><a href="#部署hexo到github-pages" class="headerlink" title="部署hexo到github pages"></a>部署hexo到github pages</h3><p>安装一键部署插件<br><code>npm install hexo-deployer-git --save</code></p>
+<p>修改_config.yml文件</p>
+<pre><code class="yml">deploy:
+  type: git
+  repository: git@github.com:用户名/用户名.github.io.git
+  branch: main
+</code></pre>
+<p>部署步骤<br><code>hexo g &amp;&amp; hexo d</code></p>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">https://zhuanlan.zhihu.com/p/60578464</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.esunr.xyz/2022/06/64163235c30f.html">https://blog.esunr.xyz/2022/06/64163235c30f.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7120189614660255781">https://juejin.cn/post/7120189614660255781</a></p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">https://hexo.io/zh-cn/docs/github-pages</a></p>
+<p><a target="_blank" rel="noopener" href="https://godweiyang.com/2018/04/13/hexo-blog/">https://godweiyang.com/2018/04/13/hexo-blog/</a></p>
+
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-10-22</span>
+            
+                <span>该篇文章被 fyb</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/hexo/'>
+                            hexo
+                        </a>
+                    
+                        <a href='/tags/ubuntu/'>
+                            ubuntu
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/made-blog/'>
+                            made-blog
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2023 China 
+
+            
+                
+
+            
+                
+                    / <a href="/friends/"> 友链 </a>
+                
+
+            
+                
+                    / <a href="/contact/"> 联系 </a>
+                
+
+            
+                
+                    / <a href="/support/"> 支持 </a>
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+                </div>
+            
+    </body>
+</html>
