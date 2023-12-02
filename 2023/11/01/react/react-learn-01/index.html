@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="react-day01" />
+    <meta name="hexo-theme-A4" content="v1.7.1" />
+    <link rel="alternate icon" type="image/webp" href="/img/IMG_20231022_224109.webp">
+    <title>tswinter98 | life is short!</title>
+
+    
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+    
+    
+<link rel="stylesheet" href="/css/ui.css">
+ 
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+    <body>
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">tswinter98</a> 
+            <span class="description">life is short! carpe diem!</span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            react-day01
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#react-%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8"><span class="post-toc-text">react 快速启动</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%89%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="post-toc-text">前置环境</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="post-toc-text">构建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#react-%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="post-toc-text">react 项目结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSX%E8%AF%AD%E6%B3%95"><span class="post-toc-text">JSX语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="post-toc-text">基本介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#jsx-%E4%BD%BF%E7%94%A8js%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="post-toc-text">jsx 使用js表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BD%BF%E7%94%A8%E5%BC%95%E5%8F%B7%E4%BC%A0%E9%80%92%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="post-toc-text">使用引号传递字符串</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BD%BF%E7%94%A8js%E5%8F%98%E9%87%8F"><span class="post-toc-text">使用js变量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%92%8C%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8"><span class="post-toc-text">函数调用和方法调用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BD%BF%E7%94%A8js%E5%AF%B9%E8%B1%A1"><span class="post-toc-text">使用js对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#jsx%E4%BD%BF%E7%94%A8%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93"><span class="post-toc-text">jsx使用列表渲染</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#jsx%E5%AE%9E%E7%8E%B0%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="post-toc-text">jsx实现条件渲染</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#jsx%E5%AE%9E%E7%8E%B0%E5%A4%8D%E6%9D%82%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="post-toc-text">jsx实现复杂条件渲染</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#React%E4%BA%8B%E4%BB%B6"><span class="post-toc-text">React事件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React%E5%9F%BA%E7%A1%80%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="post-toc-text">React基础事件绑定</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1%E5%8F%82%E6%95%B0"><span class="post-toc-text">使用事件对象参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%A0%E9%80%92%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0"><span class="post-toc-text">传递自定义参数</span></a></li></ol></li></ol>
+        
+        <h2 id="react-快速启动"><a href="#react-快速启动" class="headerlink" title="react 快速启动"></a>react 快速启动</h2><h3 id="前置环境"><a href="#前置环境" class="headerlink" title="前置环境"></a>前置环境</h3><p>node v18.18.2<br>npm v9.8.1<br>yarn v1.22.19</p>
+<h3 id="构建项目"><a href="#构建项目" class="headerlink" title="构建项目"></a>构建项目</h3><p><a target="_blank" rel="noopener" href="https://zh-hans.react.dev/learn/start-a-new-react-project">https://zh-hans.react.dev/learn/start-a-new-react-project</a></p>
+<p><code>npx create-react-app react-project-name</code></p>
+<p><code>cd react-project-name</code></p>
+<p><code>npm start</code></p>
+<h3 id="react-项目结构"><a href="#react-项目结构" class="headerlink" title="react 项目结构"></a>react 项目结构</h3><p>node_modules: 存放项目依赖的包<br>public:<br>src: 项目源代码</p>
+<blockquote>
+<p>src下的App.js是该项目的根组件<br>src下的index.js是整个项目的入口，负责导入react的核心包和根组件App，并将App根组件渲染到public&#x2F;index.html中的一个id为root的dom节点上</p>
+</blockquote>
+<p>package.json: 管理依赖库的版本， 类型于maven中的pom.xml文件</p>
+<h2 id="JSX语法"><a href="#JSX语法" class="headerlink" title="JSX语法"></a>JSX语法</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/react/react-jsx.html">React JSX ! RUNOOB</a></p>
+<h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>JSX (Javascript XML)： 一种JavaScript的语法扩展（浏览器本身不能识别，需要解析之后才能在浏览器中运行），<br>可以在JavaScript代码中编写HTML模板结构，也是React中编写UI模板的方式。</p>
+<p>优势：HTML的声明式模板写法，JavaScript的可编程能力</p>
+<p><a target="_blank" rel="noopener" href="https://babeljs.io/repl">babel js</a></p>
+<h3 id="jsx-使用js表达式"><a href="#jsx-使用js表达式" class="headerlink" title="jsx 使用js表达式"></a>jsx 使用js表达式</h3><p>在jsx中可以通过<code>&#123;&#125;</code>识别js中的表达式，比如变量、函数调用、方法调用… </p>
+<h4 id="使用引号传递字符串"><a href="#使用引号传递字符串" class="headerlink" title="使用引号传递字符串"></a>使用引号传递字符串</h4><pre><code class="JSX"> &#123;&#39;this is message&#39;&#125;
+</code></pre>
+<h4 id="使用js变量"><a href="#使用js变量" class="headerlink" title="使用js变量"></a>使用js变量</h4><pre><code class="JSX">const COUNT = 100
+
+function App() &#123;
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      &#123;COUNT&#125;
+    &lt;/div&gt;
+  );
+&#125;
+</code></pre>
+<h4 id="函数调用和方法调用"><a href="#函数调用和方法调用" class="headerlink" title="函数调用和方法调用"></a>函数调用和方法调用</h4><pre><code class="JSX">
+function foo() &#123;
+  return &#39;foo bar&#39;
+&#125;
+
+function App() &#123;
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+
+      &#123;foo()&#125;
+      &lt;br /&gt;
+      &#123;new Date().getDate&#125;
+    &lt;/div&gt;
+  );
+&#125;
+</code></pre>
+<h4 id="使用js对象"><a href="#使用js对象" class="headerlink" title="使用js对象"></a>使用js对象</h4><pre><code class="JSX">function App() &#123;
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      &lt;div style=&#123;&#123; color: 'red' &#125;&#125;&gt;this is div&lt;/div&gt;
+    &lt;/div&gt;
+  );
+&#125;
+</code></pre>
+<p>attention： if语句、switch语句、变量声明属于语句，不是表达式，不能出现在{}中</p>
+<h4 id="jsx使用列表渲染"><a href="#jsx使用列表渲染" class="headerlink" title="jsx使用列表渲染"></a>jsx使用列表渲染</h4><pre><code class="jsx">const list = [
+  &#123; id: 1001, name: &#39;Vue&#39; &#125;,
+  &#123; id: 1002, name: &#39;React&#39; &#125;,
+  &#123; id: 1003, name: &#39;Angular&#39; &#125;
+]
+
+function App() &#123;
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      this is app
+      &lt;ul&gt;
+        &#123;list.map(item =&gt; &lt;li key=&#123;item.id&#125;&gt;&#123;item.name&#125;&lt;/li&gt;)&#125;
+      &lt;/ul&gt;
+
+    &lt;/div&gt;
+  );
+&#125;
+</code></pre>
+<h4 id="jsx实现条件渲染"><a href="#jsx实现条件渲染" class="headerlink" title="jsx实现条件渲染"></a>jsx实现条件渲染</h4><pre><code class="JSX">const isLogin = true
+
+function App() &#123;
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      &#123;isLogin &amp;&amp; &lt;span&gt;this is span&lt;/span&gt;&#125;
+      &lt;br /&gt;
+      &#123;isLogin ? &lt;span&gt;jack&lt;/span&gt; : &lt;span&gt;loading ...&lt;/span&gt;&#125;
+      &lt;br /&gt;
+      
+    &lt;/div&gt;
+  );
+&#125;
+</code></pre>
+<h4 id="jsx实现复杂条件渲染"><a href="#jsx实现复杂条件渲染" class="headerlink" title="jsx实现复杂条件渲染"></a>jsx实现复杂条件渲染</h4><p>需求： 列表中需要根据文章状态设配3中情况，单图、三图、无图三种模式</p>
+<pre><code class="jsx">const articleType = 1   // 0 1 3
+
+function getArticleType() &#123;
+  if (articleType == 0) &#123;
+    return &lt;div&gt;我是无图的&lt;/div&gt;
+  &#125; else if (articleType == 1) &#123;
+    return &lt;div&gt;我是单图的&lt;/div&gt;
+  &#125; else if (articleType == 3) &#123;
+    return &lt;div&gt;我是三图的&lt;/div&gt;
+  &#125;
+&#125;
+
+function App() &#123;
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      &#123;getArticleType()&#125;
+
+    &lt;/div&gt;
+  );
+&#125;
+</code></pre>
+<h2 id="React事件"><a href="#React事件" class="headerlink" title="React事件"></a>React事件</h2><h3 id="React基础事件绑定"><a href="#React基础事件绑定" class="headerlink" title="React基础事件绑定"></a>React基础事件绑定</h3><p>on + 事件名称 &#x3D; {事件处理程序}， 遵循驼峰命名</p>
+<pre><code class="JSX">function App() &#123;
+  const handleClick = () =&gt; &#123;
+    console.log(&#39;button被点击了...&#39;)
+  &#125;
+
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      this is app &lt;br /&gt;
+      &lt;button onClick=&#123;handleClick&#125;&gt;click me&lt;/button&gt;
+    &lt;/div&gt;
+  );
+&#125;
+</code></pre>
+<h3 id="使用事件对象参数"><a href="#使用事件对象参数" class="headerlink" title="使用事件对象参数"></a>使用事件对象参数</h3><pre><code class="JSX">  const handleClick = (e) =&gt; &#123;
+    console.log(&#39;button被点击了...&#39;, e)
+  &#125;
+</code></pre>
+<h3 id="传递自定义参数"><a href="#传递自定义参数" class="headerlink" title="传递自定义参数"></a>传递自定义参数</h3><p>事件绑定的位置改成箭头函数的写法</p>
+<pre><code class="jsx">function App() &#123;
+  const handleClick = (e) =&gt; &#123;
+    console.log(&#39;button被点击了...&#39;, e)
+  &#125;
+
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      this is app &lt;br /&gt;
+      &#123;/**/&#125;
+      &lt;button onClick=&#123;() =&gt; &#123; handleClick(&#39;jackson&#39;) &#125;&#125;&gt;click me&lt;/button&gt;
+    &lt;/div&gt;
+  );
+&#125;
+</code></pre>
+
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-11-01</span>
+            
+                <span>该篇文章被 fyb</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/react/'>
+                            react
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/frontend/'>
+                            frontend
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2023 China 
+
+            
+                
+
+            
+                
+                    / <a href="/friends/"> 友链 </a>
+                
+
+            
+                
+                    / <a href="/contact/"> 联系 </a>
+                
+
+            
+                
+                    / <a href="/support/"> 支持 </a>
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊看过大海的人不会忘记海的广阔🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+                </div>
+            
+    </body>
+</html>
